@@ -54,18 +54,18 @@
 						<div>
 							<h3>Add new</h3>
 							<ul>
-								<li><a href="addCategory.php"> Add Topic Category</a></li>
-								<li><a href="createPost.php">Create post</a></li>
-								<li><a href="createUsers.php"> Create users</a></li>
+								<li><a href="addCategory2.php"> Add Topic Category</a></li>
+								<li><a href="createPost2.php">Create post</a></li>
+								<li><a href="createUsers2.php"> Create users</a></li>
 							</ul>
 						</div>
 						<div>
 							<h3>Preview all</h3>
 							<ul>
-								<li><a href="viewCategory.php"> view category</a></li>
-								<li><a href="viewPost.php">view post</a></li>
-								<li><a href="viewUsers.php">view users</a></li>
-								<li><a href="viewComment.php">comment</a></li>
+								<li><a href="viewCategory2.php"> view category</a></li>
+								<li><a href="viewPost2.php">view post</a></li>
+								<li><a href="viewUsers2.php">view users</a></li>
+								<li><a href="viewCommment2.php">comment</a></li>
 								<li><a href="../logout.php">Logout</a></li>
 							</ul>
 						</div>						
@@ -83,11 +83,17 @@
 							}
 						?>
 
+						
 						<table>
 							<thead>
 								<tr>
-									<th>Description</th>
-									
+									<th>Role</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Email</th>
+									<th>Phone</th>
+									<th>Password</th>
+									<th>Confirm Password</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -95,13 +101,13 @@
 								<?php 
 									require_once '../dbconnection.php';  
 
-											$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc`  FROM category");                                                      
-											while($row = mysqli_fetch_array($result)) {
+											$result = mysqli_query($con,"SELECT `userId`, `role`, `firstname`, `lastname`, `email`, `phone`, `password`,`cpassword` FROM users");
+													while($row = mysqli_fetch_array($result)) {
 
-										       echo '<tr><td><a href="singlecat.php?tid='.$row['cat_Id'].'"></a>'.$row['cat_desc'].'</td>
-										       <td><a href="singlecat.php?tid='.$row['cat_Id'].'">Edit</a></tr>';       
+										       echo '<tr><td><a href="singleUser2.php?tid='.$row['userId'].'"></a>'.$row['role'].'</td>
+										       <td>'.$row['firstname'].'</td><td>'.$row['lastname'].'</td><td>'.$row['email'].'</td>
+										       <td>'.$row['phone'].'</td><td>'.$row['password'].'</td><td>'.$row['cpassword'].'</td><td><a href="singleUser2.php?tid='.$row['userId'].'">Edit</a></tr>';       
 											}
-
 								 ?>
 							</tbody>
 						</table>

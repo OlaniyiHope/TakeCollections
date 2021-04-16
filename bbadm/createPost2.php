@@ -23,17 +23,17 @@
 						<div>
 							<h3>Add new</h3>
 							<ul>
-								<li><a href="addCategory.php"> Add Topic Category</a></li>
-								<li><a href="createPost.php">Create post</a></li>
-								<li><a href="createUsers.php"> Create users</a></li>
+								<li><a href="addCategory2.php"> Add Topic Category</a></li>
+								<li><a href="createPost2.php">Create post</a></li>
+								<li><a href="createUsers2.php"> Create users</a></li>
 							</ul>
 						</div>
 						<div>
 							<h3>Preview all</h3>
 							<ul>
-								<li><a href="viewCategory.php"> view category</a></li>
+								<li><a href="viewCategory2.php"> view category</a></li>
 								<li><a href="viewPost2.php">view post</a></li>
-								<li><a href="viewUsers.php">view users</a></li>
+								<li><a href="viewUsers2.php">view users</a></li>
 								<li><a href="#">comment</a></li>
 								<li><a href="../logout.php">Logout</a></li>
 							</ul>
@@ -64,16 +64,16 @@
 
 								<div class="col">
 									<p>Post Title</p>
-									<input type="text" name="txtTitle" class="txt1" >
+									<input type="text" name="txtTitle" placeholder="name of your product e.g Addidas" class="txt1" >
 								</div>
 
 								<div class="col">
 									<p>Enter Content</p>
-									<textarea class="txt2" name="txtContent"></textarea>
+									<textarea class="txt2" name="txtContent" placeholder="brief history of your product"></textarea>
 								</div>
 								<div class="col">
 									<p>Price</p>
-									<textarea class="txt" name="price"></textarea>
+									<textarea class="txt" name="price" placeholder="e.g $150.00"></textarea>
 								</div>		
 								<div class="col">
 									<p>Display Post at home page</p>

@@ -47,10 +47,10 @@
 		}
 	}
 
-	$insert = "INSERT INTO post2(catId, userId, title, content, price, image, postDate, displayHome, trending, status) VALUES('$cat', '$user', '$title', '$content', '$price', '$image', '$date', $home', '$trend', '$status')";
+	$insert = "INSERT INTO post2(catId, userId, title, content, price, image, postDate, displayHome, trending, status) VALUES('$cat', '$user', '$title', '$content', '$price', '$image', '$date', '$home', '$trend', '$status')";
 
 	if (mysqli_query($con, $insert)) {
-		header("Location: ../index.php");
+		header("Location: ../category.php");
 	} else {
 		echo "Error: " . $insert . "<br>" . mysqli_error($con);
 	}

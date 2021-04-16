@@ -4,7 +4,7 @@
 	$desc = $_POST['cat_desc'];
 	
 
-	$insert = "INSERT INTO category(cat_desc) VALUES('$desc')";
+	$insert = "INSERT INTO category2(cat_desc) VALUES('$desc')";
 
 	if (mysqli_query($con, $insert)) {
 		header("Location: ../index.php");

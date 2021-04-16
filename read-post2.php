@@ -118,6 +118,7 @@ border-radius: 10px 10px 10px 10px;
 								<li><a href="login.php">Login</a></li>
 								<li><a href="contact.php">Contact</a></li>
 								<li><a href="category.php">Shop</a></li>
+								<li><a href="cart.php">Cart</a></li>
 								<?php
 					require_once 'dbconnection.php';
 
@@ -205,9 +206,13 @@ border-radius: 10px 10px 10px 10px;
 				</div>
 		
 </div>
-				
-				
+		<form method="POST" action="cart.php">
+		<button class="button" type="submit"  style="background-color: black; padding: 5px; color: white; position: 
+		absolute; top: 800px; left: 700px; border-radius: 10px 10px 10px 10px; width: 20%;"><a href="" style="color: 
+		white;"> Add to Cart</a></button>
 		
+			
+		</form>
 	<!--================End Single Product Area =================-->
 
 	<!--================Product Description Area =================-->

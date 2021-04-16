@@ -54,18 +54,18 @@
 						<div>
 							<h3>Add new</h3>
 							<ul>
-								<li><a href="addCategory.php"> Add Topic Category</a></li>
-								<li><a href="createPost.php">Create post</a></li>
-								<li><a href="createUsers.php"> Create users</a></li>
+								<li><a href="addCategory2.php"> Add Topic Category</a></li>
+								<li><a href="createPost2.php">Create post</a></li>
+								<li><a href="createUsers2.php"> Create users</a></li>
 							</ul>
 						</div>
 						<div>
 							<h3>Preview all</h3>
 							<ul>
-								<li><a href="viewCategory.php"> view category</a></li>
-								<li><a href="viewPost.php">view post</a></li>
-								<li><a href="viewUsers.php">view users</a></li>
-								<li><a href="viewComment.php">comment</a></li>
+								<li><a href="viewCategory2.php"> view category</a></li>
+								<li><a href="viewPost2.php">view post</a></li>
+								<li><a href="viewUsers2.php">view users</a></li>
+								<li><a href="viewComment2.php">comment</a></li>
 								<li><a href="../logout.php">Logout</a></li>
 							</ul>
 						</div>						

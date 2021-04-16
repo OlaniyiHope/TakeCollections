@@ -123,15 +123,7 @@
 								<li><a href="category.php">Shop</a></li>
 								<li><a href="cart.php">Cart</a></li>
 
-								<?php
-					require_once 'dbconnection.php';
-
-					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category");                                                      
-					while($row = mysqli_fetch_array($result)) {			
-				          echo  '
-				          	<li><a href="topics.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
-					}
-				?>
+						
 				</a></li>
 						</ul>
 					
@@ -142,8 +134,8 @@
 
 	</header>
 	<!-- End Header Area -->
-<!-- Start Banner Area -->
-    <section class="banner-area organic-breadcrumb">
+
+	  <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
@@ -158,88 +150,36 @@
     </section>
     <!-- End Banner Area -->
 
-    <!--================Cart Area =================-->
-    <section class="cart_area">
-        <div class="container">
-            <div class="cart_inner">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                               <?php 
-                                    require_once 'dbconnection.php';  
+   	<?php
+						require_once 'dbconnection.php';
 
-                                            $result = mysqli_query($con,"SELECT `postId`, `image`, `title`, `price`, FROM post");                                                      
-                                            while($row = mysqli_fetch_array($result)) {
+						if (isset($_GET['tid'])) {
+							$tid = $_GET['tid'];
 
-                                               echo '<tr><td><a href="singlePost.php?tid='.$row['postId'].'"></a>'.$row['title'].'</td>
-                                              <td>'.$row['price'].'</td><td>'.$row['image'].'</td>
-                                               <td>'.$row['postDate'].'</td><td><a href="singlePost.php?tid='.$row['postId'].'">Edit</a></tr>';       
-                                            }
+							$result = mysqli_query($con,"SELECT  `title`, `price`, `content` FROM post2 WHERE postId = '$tid'");                                                      
+							while($row = mysqli_fetch_array($result)) {
+						
+				          		echo '
+				          			<div class="contents-head">
+										<h3>'.$row['title'].' </h3>
+										<h3>'.$row['price'].' </h3>
+										<h3>'.$row['content'].' </h3>			
+									</div>
+				          		';    
+							}
+						}
+					?>
+					
+				
+	
 
-                                 ?>
+		
+			</div>
+			
+		</section>
 
-                                </td>
-                                <td>
-                                    <h5>Shipping</h5>
-                                </td>
-                                <td>
-                                    <div class="shipping_box">
-                                        <ul class="list">
-                                            <li><a href="#">Flat Rate: $5.00</a></li>
-                                            <li><a href="#">Free Shipping</a></li>
-                                            <li><a href="#">Flat Rate: $10.00</a></li>
-                                            <li class="active"><a href="#">Local Delivery: $2.00</a></li>
-                                        </ul>
-                                        <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-                                        <select class="shipping_select">
-                                            <option value="1">Bangladesh</option>
-                                            <option value="2">India</option>
-                                            <option value="4">Pakistan</option>
-                                        </select>
-                                        <select class="shipping_select">
-                                            <option value="1">Select a State</option>
-                                            <option value="2">Select a State</option>
-                                            <option value="4">Select a State</option>
-                                        </select>
-                                        <input type="text" placeholder="Postcode/Zipcode">
-                                        <a class="gray_btn" href="#">Update Details</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="out_button_area">
-                                <td>
 
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <div class="checkout_btn_inner d-flex align-items-center">
-                                        <a class="gray_btn" href="category.php">Continue Shopping</a>
-                                        <a class="primary-btn" href="#">Proceed to checkout</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Cart Area =================-->
-
+	
 
 	<!-- start footer Area -->
 	<footer class="footer-area section_gap">

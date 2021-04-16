@@ -15,11 +15,11 @@
 			$_SESSION['userId'] = $row["userId"];
 
 			if ($row["userId"] == 0) {
-				header("Location: bbadm/createPost.php");
+				header("Location: bbadm/createPost2.php");
 			}
 			else {
 				echo "incorrect username or password";
-				header("Location: login.php");
+				header("Location: ./login.php");
 			}
 			
 	    }

@@ -123,15 +123,7 @@
 								<li><a href="category.php">Shop</a></li>
 								<li><a href="cart.php">Cart</a></li>
 
-								<?php
-					require_once 'dbconnection.php';
-
-					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category");                                                      
-					while($row = mysqli_fetch_array($result)) {			
-				          echo  '
-				          	<li><a href="topics.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
-					}
-				?>
+						
 				</a></li>
 						</ul>
 					
@@ -323,13 +315,13 @@
 				<?php
 					require_once 'dbconnection.php';
 
-					$result = mysqli_query($con,"SELECT `title`, `image`, `price`, `postId` FROM post WHERE displayHome = 'Yes' && trending = 'Yes' && status = 'Publish'");                                                      
+					$result = mysqli_query($con,"SELECT `title`, `image`, `price`, `postId` FROM post2 WHERE displayHome = 'Yes' && trending = 'Yes' && status = 'Publish'");                                                      
 					while($row = mysqli_fetch_array($result)) {			
 				          echo '
 				          	<div class="item">
 								<div class="content">
-									<a href="/TakeCollections/read-post.php?tid='.$row['postId'].'" target="_blank">
-									<img src="postImg/'.$row['image'].'" alt="blog post image">
+									<a href="/TakeCollections/read-post2.php?tid='.$row['postId'].'" target="_blank">
+									<img src="postImg2/'.$row['image'].'" alt="blog post image">
 									<h4>'.$row['title'].'</h4>
 									<h4>'.$row['price'].'</h4>
 									</a>

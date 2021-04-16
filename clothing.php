@@ -29,8 +29,9 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
 
-	<style>
+	
 
+<style>
 .navbar ul li a{
 	color: black;
 	margin: 15px;
@@ -50,7 +51,7 @@
 	height: auto;
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
@@ -59,10 +60,10 @@
 	flex-wrap: wrap;
 	height: auto;
 	display: flex;
-	justify-content: flex-start;
+	
 	margin: auto;
 	padding: 5px; 
-	
+	margin-left: 20px;
 	
 }
 .display-post .contact-item{
@@ -73,9 +74,10 @@
 }
 
 .display-post .post-item .item{
-	flex-basis: 30%;
+	flex-basis: 22%;
 	flex-wrap: wrap;
-	margin: 5px;
+	margin-right: 18px;
+	
 }
 .display-post .post-item .item .content{
 	width: 100%;
@@ -83,8 +85,8 @@
 	position: relative;
 }
 .display-post .post-item .item .content img{
-	width: 100px;
-	height: 180px;
+	width: 200px;
+	height: 200px;
 }
 .display-post .post-item .item .content a h4{
 	color: #000;
@@ -94,6 +96,7 @@
 	text-decoration: none;
 }
 </style>
+
 </head>
 
 <body id="category">
@@ -119,15 +122,7 @@
 								<li><a href="login.php">Login</a></li>
 								<li><a href="contact.php">Contact</a></li>
 								<li><a href="category.php">Shop</a></li>
-								<?php
-					require_once 'dbconnection.php';
-
-					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category");                                                      
-					while($row = mysqli_fetch_array($result)) {			
-				          echo  '
-				          	<li><a href="topics.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
-					}
-				?>
+							
 				</a></li>
 						</ul>
 					
@@ -161,111 +156,15 @@
 			<div class="col-xl-3 col-lg-4 col-md-5">
 				<div class="sidebar-categories">
 					<div class="head">Browse Categories</div>
-					<ul class="main-categories">
-						<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Clothing and Wears<span class="number">(10)</span></a>
-							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-								<li class="main-nav-list child"><a href="#">Cardigan<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="shoes.html">Shoes<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="coperateshirts.html">Cooperate Shirts<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="trousers.html">Trousers<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Blazers<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
+					<?php
+					require_once 'dbconnection.php';
 
-						<li class="main-nav-list"><a data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span
-								 class="lnr lnr-arrow-right"></span>Food<span class="number">(53)</span></a>
-							<ul class="collapse" id="meatFish" data-toggle="collapse" aria-expanded="false" aria-controls="meatFish">
-								<li class="main-nav-list child"><a href="cakes.html">Cakes<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="sharwarma.html">Sharwarma<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="drink.html">Drinks<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="fruitjuice.html">Fruits Juice<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="beancake.html">Bean Cake<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span
-								 class="lnr lnr-arrow-right"></span>Body Spray<span class="number">(53)</span></a>
-							<ul class="collapse" id="cooking" data-toggle="collapse" aria-expanded="false" aria-controls="cooking">
-								<li class="main-nav-list child"><a href="#">Perfumes<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Body Creams<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Rolons<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Powders and Shampoo<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Hair Creams<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beverages" aria-expanded="false" aria-controls="beverages"><span
-								 class="lnr lnr-arrow-right"></span>Beverages<span class="number">(24)</span></a>
-							<ul class="collapse" id="beverages" data-toggle="collapse" aria-expanded="false" aria-controls="beverages">
-								<li class="main-nav-list child"><a href="#">Milo<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Golden Morn<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Custards<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Quaker oats<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Milks<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeClean" aria-expanded="false" aria-controls="homeClean"><span
-								 class="lnr lnr-arrow-right"></span>Business<span class="number">(53)</span></a>
-							<ul class="collapse" id="homeClean" data-toggle="collapse" aria-expanded="false" aria-controls="homeClean">
-								<li class="main-nav-list child"><a href="#">Graphics Design<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Animations<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">CORporate Affair Commision<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Photography<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Web designer<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						
-						<li class="main-nav-list"><a data-toggle="collapse" href="#officeProduct" aria-expanded="false" aria-controls="officeProduct"><span
-								 class="lnr lnr-arrow-right"></span>Music<span class="number">(77)</span></a>
-							<ul class="collapse" id="officeProduct" data-toggle="collapse" aria-expanded="false" aria-controls="officeProduct">
-								<li class="main-nav-list child"><a href="#">All instruments<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Speakers<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Percursion<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Strings<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Brass<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beauttyProduct" aria-expanded="false" aria-controls="beauttyProduct"><span
-								 class="lnr lnr-arrow-right"></span>Babies Products<span class="number">(65)</span></a>
-							<ul class="collapse" id="beauttyProduct" data-toggle="collapse" aria-expanded="false" aria-controls="beauttyProduct">
-								<li class="main-nav-list child"><a href="#">Feeders<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Cream<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Clothes<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Toys<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Carrier<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#healthProduct" aria-expanded="false" aria-controls="healthProduct"><span
-								 class="lnr lnr-arrow-right"></span>Games<span class="number">(29)</span></a>
-							<ul class="collapse" id="healthProduct" data-toggle="collapse" aria-expanded="false" aria-controls="healthProduct">
-								<li class="main-nav-list child"><a href="#">Chess<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Monopoly<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Scrabble<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Rackets<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Balls<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a href="#">Fashion<span class="number">(29)</span></a></li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeAppliance" aria-expanded="false" aria-controls="homeAppliance"><span
-								 class="lnr lnr-arrow-right"></span>Home Appliances<span class="number">(15)</span></a>
-							<ul class="collapse" id="homeAppliance" data-toggle="collapse" aria-expanded="false" aria-controls="homeAppliance">
-								<li class="main-nav-list child"><a href="#">Wristwatches<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Glasses<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Bandana<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Durac<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Belts<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false"
-							 aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>Education<span class="number">(48)</span></a>
-							<ul class="collapse" id="babyCare" data-toggle="collapse" aria-expanded="false" aria-controls="babyCare">
-								<li class="main-nav-list child"><a href="#">Language Books<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Novels and story books<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Mathematical Sets<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Subject Textbooks<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#" class="border-bottom-0">Notebooks<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-					</ul>
+					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category2");                                                      
+					while($row = mysqli_fetch_array($result)) {			
+				          echo  '
+				          	<li><a href="topics2.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
+					}
+				?>
 				</div>
 				<div class="sidebar-filter mt-50">
 					<div class="top-filter-head">Product Filters</div>
@@ -340,11 +239,7 @@
 				</div>
 				<!-- End Filter Bar -->
 				<!-- Start Best Seller -->
-						<section class="display-post">
-			<div class="post-item">
-			
-				
-				<?php
+					<?php
 					require_once 'dbconnection.php';
 
 					$result = mysqli_query($con,"SELECT `title`, `image`, `price`, `postId` FROM post2 WHERE displayHome = 'Yes' && trending = 'Yes' && status = 'Publish'");                                                      
@@ -352,7 +247,7 @@
 				          echo '
 				          	<div class="item">
 								<div class="content">
-									<a href="/TakeCollections/read-post2.php?tid='.$row['postId'].'" target="_blank">
+									<a href="read-post2.php?tid='.$row['postId'].'" target="_blank">
 									<img src="postImg2/'.$row['image'].'" alt="blog post image">
 									<h4>'.$row['title'].'</h4>
 									<h4>'.$row['price'].'</h4>
@@ -362,9 +257,6 @@
 				          ';    
 					}
 				?>
-		
-		</div>
-	</section>
 				<!-- End Best Seller -->
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">

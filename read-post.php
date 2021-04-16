@@ -213,7 +213,7 @@ border-radius: 10px 10px 10px 10px;
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
 						</div>
 						<div class="card_area d-flex align-items-center">
-							<a class="primary-btn" name="quantity" type="submit" href="#">Add to Cart</a>
+							<a class="primary-btn" name="quantity" type="submit" href="checkout.php">Proceed to Checkout</a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
 						</div>

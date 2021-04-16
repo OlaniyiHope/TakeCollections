@@ -12,7 +12,7 @@
   	$cpass = $_POST['cpass'];
   	$error = '';
 
-	if (isset($_POST['edit'])) {
+	if (isset($_POST['edit2'])) {
 	  		
 		
 
@@ -23,7 +23,7 @@
 			$update = mysqli_query($con, $query);	
 
 			if($update){
-				header("Location: viewUsers.php");
+				header("Location: viewUsers2.php");
 			}
 			else {
 				echo "Error: " . $update . "<br>" . mysqli_error($con);
@@ -35,7 +35,7 @@
 
 		if (mysqli_query($con, $delete)) {
 			$error = "delete";
-			header("Location: viewUsers.php?feedback=".$error."");
+			header("Location: viewUsers2.php?feedback=".$error."");
 		} else {
 		    echo "Error deleting record: " . mysqli_error($con);
 		}

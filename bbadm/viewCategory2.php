@@ -54,18 +54,18 @@
 						<div>
 							<h3>Add new</h3>
 							<ul>
-								<li><a href="addCategory.php"> Add Topic Category</a></li>
-								<li><a href="createPost.php">Create post</a></li>
-								<li><a href="createUsers.php"> Create users</a></li>
+								<li><a href="addCategory2.php"> Add Topic Category</a></li>
+								<li><a href="createPost2.php">Create post</a></li>
+								<li><a href="createUsers2.php"> Create users</a></li>
 							</ul>
 						</div>
 						<div>
 							<h3>Preview all</h3>
 							<ul>
-								<li><a href="viewCategory.php"> view category</a></li>
-								<li><a href="viewPost.php">view post</a></li>
-								<li><a href="viewUsers.php">view users</a></li>
-								<li><a href="viewComment.php">comment</a></li>
+								<li><a href="viewCategory2.php"> view category</a></li>
+								<li><a href="viewPost2.php">view post</a></li>
+								<li><a href="viewUsers2.php">view users</a></li>
+								<li><a href="viewComment2.php">comment</a></li>
 								<li><a href="../logout.php">Logout</a></li>
 							</ul>
 						</div>						
@@ -86,25 +86,20 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Title</th>
-									<th>Price</th>
-									<th>Home Page</th>
-									<th>Trending</th>
-									<th>Status</th>
-									<th>Date</th>
+									<th>Description</th>
+									
 									<th>Action</th>
 								</tr>
 							</thead>
-							<tbody>0
+							<tbody>
 								<?php 
 									require_once '../dbconnection.php';  
 
-											$result = mysqli_query($con,"SELECT `postId`, `title`, `price`, `displayHome`, `trending`, `status`, `postDate` FROM post");                                                      
+											$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc`  FROM category2");                                                      
 											while($row = mysqli_fetch_array($result)) {
 
-										       echo '<tr><td><a href="singlePost.php?tid='.$row['postId'].'"></a>'.$row['title'].'</td>
-										      <td>'.$row['price'].'</td> <td>'.$row['displayHome'].'</td><td>'.$row['trending'].'</td><td>'.$row['status'].'</td>
-										       <td>'.$row['postDate'].'</td><td><a href="singlePost.php?tid='.$row['postId'].'">Edit</a></tr>';       
+										       echo '<tr><td><a href="singlecat.php?tid='.$row['cat_Id'].'"></a>'.$row['cat_desc'].'</td>
+										       <td><a href="singlecat.php?tid='.$row['cat_Id'].'">Edit</a></tr>';       
 											}
 
 								 ?>

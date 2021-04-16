@@ -28,7 +28,8 @@
 	<link rel="stylesheet" href="css/nouislider.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
-	<style>
+
+<style>
 .navbar ul li a{
 	color: black;
 	margin: 15px;
@@ -42,7 +43,58 @@
 .navbar ul li a:hover{
 	color: #ffc107;
 }
+.display-post{
+	width: 98%;
+	margin: auto;
+	height: auto;
+	position: relative;
+	display: flex;
+	
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.display-post .post-item{
+	flex-basis: 98%;
+	flex-wrap: wrap;
+	height: auto;
+	display: flex;
+	
+	margin: auto;
+	padding: 5px; 
+	margin-left: 20px;
+	
+}
+.display-post .contact-item{
+	flex-basis: 0%;
+	flex-wrap: wrap;
+	height: auto;
+
+}
+
+.display-post .post-item .item{
+	flex-basis: 22%;
+	flex-wrap: wrap;
+	margin-right: 18px;
+	
+}
+.display-post .post-item .item .content{
+	width: 100%;
+	height:auto;
+	position: relative;
+}
+.display-post .post-item .item .content img{
+	width: 200px;
+	height: 200px;
+}
+.display-post .post-item .item .content a h4{
+	color: #000;
+	font-size: 15px;
+}
+.display-post .post-item .item .content a{
+	text-decoration: none;
+}
 </style>
+
 </head>
 
 <body id="category">
@@ -67,15 +119,7 @@
 								<li><a href="login.php">Login</a></li>
 								<li><a href="contact.php">Contact</a></li>
 								<li><a href="category.php">Shop</a></li>
-								<?php
-					require_once 'dbconnection.php';
-
-					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category");                                                      
-					while($row = mysqli_fetch_array($result)) {			
-				          echo  '
-				          	<li><a href="topics.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
-					}
-				?>
+							
 				</a></li>
 						</ul>
 					

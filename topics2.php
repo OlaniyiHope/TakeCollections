@@ -28,18 +28,7 @@
 	<link rel="stylesheet" href="css/nouislider.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
-	<style>
-.display-post{
-	width: 98%;
-	margin: auto;
-	height: auto;
-	position: relative;
-	display: flex;
-	
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
+<style>
 .navbar ul li a{
 	color: black;
 	margin: 15px;
@@ -53,6 +42,16 @@
 .navbar ul li a:hover{
 	color: #ffc107;
 }
+.display-post{
+	width: 98%;
+	margin: auto;
+	height: auto;
+	position: relative;
+	display: flex;
+	
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
 .display-post .post-item{
 	flex-basis: 98%;
 	flex-wrap: wrap;
@@ -61,7 +60,7 @@
 	
 	margin: auto;
 	padding: 5px; 
-
+	margin-left: 20px;
 	
 }
 .display-post .contact-item{
@@ -72,8 +71,9 @@
 }
 
 .display-post .post-item .item{
-	flex-basis: 30%;
+	flex-basis: 22%;
 	flex-wrap: wrap;
+	margin-right: 18px;
 	
 }
 .display-post .post-item .item .content{
@@ -82,15 +82,21 @@
 	position: relative;
 }
 .display-post .post-item .item .content img{
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 }
 .display-post .post-item .item .content a h4{
-	color: #f00;
+	color: #fff;
+	background-color: #ffc107;
 	font-size: 15px;
+	
 }
-.display-post .post-item .item .content a{
+ .item .content a{
 	text-decoration: none;
+	background-color: #ffc107;
+}
+.item .content a:hover{
+	color: red;
 }
 </style>
 </head>
@@ -118,15 +124,7 @@
 								<li><a href="login.php">Login</a></li>
 								<li><a href="contact.php">Contact</a></li>
 								<li><a href="category.php">Shop</a></li>
-								<?php
-					require_once 'dbconnection.php';
-
-					$result = mysqli_query($con,"SELECT `cat_Id`, `cat_desc` FROM category");                                                      
-					while($row = mysqli_fetch_array($result)) {			
-				          echo  '
-				          	<li><a href="topics.php?ct='.$row['cat_Id'],'">'.$row['cat_desc'], '</a><li>';    
-					}
-				?>
+								
 				</a></li>
 						</ul>
 					
@@ -242,10 +240,15 @@
 						<a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</div>
+			
 				<!-- End Filter Bar -->
 				<!-- Start Best Seller -->
-						<section class="display-post">
+					<section class="display-post">
 			<div class="post-item">
+				
+				
+					
+				
 					<?php
 						require_once 'dbconnection.php';
 
@@ -258,18 +261,21 @@
 				          		echo '
 				          			<div class="item">
 										<a href="read-post2.php?tid='.$row['postId'].'">
-										<div class="bg">
+										<div class="content">
 											<img src="postImg2/'.$row['image'].'" alt="read article image">
 											<h5>'.$row['title'].' </h5>
-												<h5>'.$row['price'].' </h5>
+											<h5>'.$row['price'].' </h5>
 										</div></a>
 									</div>
 				          		';    
 							}
 						}
 					?>
-				</div>
-			</section>
+		
+			</div>
+			
+		</section>
+
 				<!-- End Best Seller -->
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">

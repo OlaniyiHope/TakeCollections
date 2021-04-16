@@ -11,7 +11,7 @@
 				background-color: #0B378A;
 				color: #fff;
 				font-size: 16px;
-				padding: 8px;
+				padding: 2px;
 				margin-top: 10px;
 				border:none;
 				margin-right: 8px;
@@ -20,7 +20,7 @@
 				background-color: #f00;
 				color: #fff;
 				font-size: 16px;
-				padding: 8px;
+				padding: 2px;
 				margin-top: 10px;
 				border:none;
 			}
@@ -43,18 +43,18 @@
 						<div>
 							<h3>Add new</h3>
 							<ul>
-								<li><a href="addCategory.php"> Add Topic Category</a></li>
-								<li><a href="createPost.php">Create post</a></li>
-								<li><a href="createUsers.php"> Create users</a></li>
+								<li><a href="addCategory2.php"> Add Topic Category</a></li>
+								<li><a href="createPost2.php">Create post</a></li>
+								<li><a href="createUsers2.php"> Create users</a></li>
 							</ul>
 						</div>
 						<div>
 							<h3>Preview all</h3>
 							<ul>
-								<li><a href="#"> view category</a></li>
-								<li><a href="viewPost.php">view post</a></li>
-								<li><a href="#">view users</a></li>
-								<li><a href="#">comment</a></li>
+								<li><a href="viewCategory2.php"> view category</a></li>
+								<li><a href="viewPost2.php">view post</a></li>
+								<li><a href="viewUsers2.php">view users</a></li>
+								<li><a href="viewcomment2.php">comment</a></li>
 								<li><a href="../logout.php">Logout</a></li>
 							</ul>
 						</div>						
@@ -75,61 +75,50 @@
 							}
 						?>
 
-						<form action="edit.php" method="POST" enctype="multipart/form-data">
+						<form action="editUsers2.php" method="POST" enctype="multipart/form-data">
 							<div class="form-row">
 							<?php
                                 require_once '../dbconnection.php';
                                 if (isset($_GET['tid'])) {
 									$tid = $_GET['tid'];
 							
-                                $result = mysqli_query($con, "SELECT * FROM post
-                                WHERE postId = '$tid'");
+                                $result = mysqli_query($con, "SELECT * FROM users
+                                WHERE userId = '$tid'");
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                $trend = $row['trending'];
-								echo
-									 '<div class="col">
-										<input type="text" name="txtID" style="display: none" value="'.$row['postId'].'">
+                               
+								echo '<div class="col">
+										<input type="text" name="txtID" style="display: none" value="'.$row['userId'].'">
 									</div>
 									<div class="col">
-										<p>Post Title</p>
-										<input type="text" name="txtTitle" class="txt1" value="'.$row['title'].'">
+										<p>Role</p>
+										<input type="text" name="txtrole" class="txt1" value="'.$row['role'].'">
 									</div>
 									<div class="col">
-										<p>Enter Content</p>
-										<textarea class="txt2" name="txtContent">'.$row['content'].'</textarea>
+										<p>First Name</p>
+										<textarea class="txt2" name="fname">'.$row['firstname'].'</textarea>
 									</div>	
-								<div class="col">
-										<p>Price</p>
-										<input type="text" name="price" class="txt1" value="'.$row['price'].'">
+									<div class="col">
+										<p>Last Name</p>
+										<textarea class="txt2" name="lname">'.$row['lastname'].'</textarea>
 									</div>
 									<div class="col">
-										<p>Display Post at home page</p>
-										<select class="txt" name="txtHome">
-											<option>No</option>
-											<option>Yes</option>
-										</select>
-										<span style="color: #f00">'.$row['displayHome'].'</span>
+										<p>Email</p>
+										<textarea class="txt2" name="email">'.$row['email'].'</textarea>
 									</div>
 									<div class="col">
-										<p>Trending Post</p>
-										<select class="txt" name="txtTrending">
-											<option>No</option>
-											<option>Yes</option>
-										</select>
-										<span style="color: #f00">'.$row['trending'].'</span>
+										<p>Phone</p>
+										<textarea class="txt2" name="phone">'.$row['phone'].'</textarea>
 									</div>
 									<div class="col">
-										<p>status</p>
-										<select class="txt" name="txtStatus">
-											<option>Draft</option>
-											<option>Publish</option>
-										</select>
-										<span style="color: #f00">'.$row['status'].'</span>
+										<p>Password</p>
+										<textarea class="txt2" name="pass">'.$row['password'].'</textarea>
 									</div>
-									<div class="col" style="margin-top: 12px; margin-bottom: 12px; width:10px; height: 10px; ">
-										<input type="file" name="postIMG" placeholder="Upload Image">
-										<br><span style="color: #f00">'.$row['image'].'</span>
-									</div>	
+									<div class="col">
+										<p>Confirm Password</p>
+										<textarea class="txt2" name="cpass">'.$row['cpassword'].'</textarea>
+									</div>
+								
+								
 							';} }
 							?>
 								<div class="col">
